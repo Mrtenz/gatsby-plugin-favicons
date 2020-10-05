@@ -1,6 +1,13 @@
 import React from 'react';
+import { RenderBodyArgs } from 'gatsby';
+import { is } from 'superstruct';
+import { Options, OptionsStruct } from './options';
 
-module.exports.onRenderBody = function({ setHeadComponents, pathPrefix }, { icons = {} }) {
+export const onRenderBody = ({ setHeadComponents, pathPrefix, reporter }: RenderBodyArgs, options: Options) => {
+  if (!is(options, OptionsStruct)) {
+    return reporter.panic('Invalid or missing options, please refer to the documentation');
+  }
+
   const prefix = pathPrefix && (pathPrefix.endsWith('/') ? pathPrefix : `${pathPrefix}/`) || '/';
   const {
     android = true,
@@ -10,7 +17,7 @@ module.exports.onRenderBody = function({ setHeadComponents, pathPrefix }, { icon
     favicons = true,
     yandex = false,
     windows = false
-  } = icons;
+  } = options.favicons;
 
   const components = [];
 
