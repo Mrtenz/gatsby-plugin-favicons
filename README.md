@@ -19,9 +19,9 @@ All options except `logo` are optional.
 plugins: [
   {
     resolve: 'gatsby-plugin-favicons',
-    options: {
+    icons: {
       logo: './src/logo.svg',
-      title: 'My Website',
+      appName: 'My Website',
       background: '#fff',
       favicons: {
         android: true,
