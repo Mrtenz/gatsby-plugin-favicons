@@ -1,5 +1,13 @@
 # gatsby-plugin-favicons
 
+## Deprecated
+
+Gatsby has an official plugin for favicons (and more), which is actively maintained. This plugin is no longer updated.
+
+https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-manifest
+
+---
+
 Generate favicons (Android, iOS, etc.) for your Gatsby website.
 
 Based on [`gatsby-plugin-favicon` by Creatiwity](https://github.com/Creatiwity/gatsby-plugin-favicon), but updated to work with Gatsby v2.
